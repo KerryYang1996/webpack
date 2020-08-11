@@ -12,6 +12,10 @@ module.exports = {
       template: "src/assets/index.html",
     }),
   ],
+  devtool: "inline-source-map",
+  devServer: {
+    contentBase: "./dist",
+  },
   module: {
     rules: [
       {
