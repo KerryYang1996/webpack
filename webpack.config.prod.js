@@ -20,6 +20,7 @@ module.exports = {
 
   module: {
     rules: [
+      ...base.module.rules,
       {
         test: /\.css$/,
         //将CSS抽成文件

@@ -1,3 +1,3 @@
-import css from "./x.css";
-console.log(css.toString());
+import "./x.scss";
+import "./y.less";
 export default "xxx";
