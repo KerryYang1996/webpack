@@ -1,17 +1,11 @@
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-var path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+
+const base = require("./webpack.config.base.js");
+//开发
 module.exports = {
-  mode: "development",
-  entry: "./src/index.js",
-  output: {
-    filename: "[name].[contenthash].js",
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: "My App",
-      template: "src/assets/index.html",
-    }),
-  ],
+  ...base,
   devtool: "inline-source-map",
   devServer: {
     contentBase: "./dist",
@@ -20,6 +14,8 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
+
+        //将CSS以JS显示（开发）
         use: ["style-loader", "css-loader"],
       },
     ],
